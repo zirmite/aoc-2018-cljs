@@ -53,16 +53,3 @@
   (let [ids-xys (map parse-code codes)
         checked (map #(check-xys freqs %) ids-xys)]
     (:id (filter #(= (:check %) (:count %)) checked))))
-
-
-
-
-
-(comment
-  (def code1 "#5 @ 919,43: 10x16")
-  (def x 35)
-  (def y 93)
-  (def width 11)
-  (def height 13)
-  (def xs (range (+ 0 x) (+ 0 x width)))
-  (def ys (range (- 0 y height) (- 0 y))))
