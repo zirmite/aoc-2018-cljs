@@ -34,3 +34,10 @@
 
 (defn line-seq-resource [resource]
   (line-seq (resourcize resource)))
+
+(defn cart [colls]
+  (if (empty? colls)
+    '(())
+    (for [x (first colls)
+          more (cart (rest colls))]
+      (cons x more))))

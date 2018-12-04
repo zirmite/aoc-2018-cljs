@@ -15,8 +15,7 @@
         1
         0)))
 
-(defn checksum
-  [codes]
+(defn checksum [codes]
   (let [freqs (map-frequencies codes)
         twos (reduce + (map #(count-matches 2 %) freqs))
         threes (reduce + (map #(count-matches 3 %) freqs))]
@@ -37,8 +36,14 @@
   (let [h-dists (group-by #(apply hamming %) (cart [codes codes]))]
     (get h-dists 1)))
 
+(defn common-letters [s1 s2])
+
+
 ; Part 1
 (checksum codes)
 
 ; Part 2
 (hamming-bin codes)
+
+(comment
+  (partition 2 (interleave (first codes) (second codes))))
