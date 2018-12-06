@@ -41,3 +41,6 @@
     (for [x (first colls)
           more (cart (rest colls))]
       (cons x more))))
+
+(defn to-int [xy]
+  (map #(js/parseInt %) xy))
